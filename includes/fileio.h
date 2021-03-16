@@ -27,7 +27,7 @@ int writeFile(std::string &filename,char *contents);
  * \param filename where data is 
  * \param contents data to write to file
  * \return
- *        CANNOT_OPEN_FILE  if filename cannot be opened
+ *        FAIL_CANNOT_OPEN_FILE  if filename cannot be opened
  *        SUCCESS
  */
 int readFile(std::string &filename,std::string &contents);
