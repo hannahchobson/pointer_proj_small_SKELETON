@@ -10,13 +10,12 @@
 #include <fstream>
 using namespace std;
 
-const std::string MYFILE = "inputfile.txt";
 const int SUCCESS = 0;
 const int FAIL_CANNOT_OPEN_FILE = -1;
 
 int writeFile(std::string &filename,char *contents){
 	ofstream myOutputFile;
-	myOutputFile.open(MYFILE.c_str());
+	myOutputFile.open(filename.c_str());
 
 	if (!myOutputFile.is_open())
 		return FAIL_CANNOT_OPEN_FILE;
@@ -29,7 +28,7 @@ int writeFile(std::string &filename,char *contents){
 
 int readFile(std::string &filename,std::string &contents){
 	ifstream myInputFile;
-	myInputFile.open(MYFILE.c_str());
+	myInputFile.open(filename.c_str());
 
 	if(!myInputFile.is_open())
 		return FAIL_CANNOT_OPEN_FILE;

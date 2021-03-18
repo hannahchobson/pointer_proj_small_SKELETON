@@ -10,12 +10,20 @@ int amountOfMemoryToAllocateForNewString(int len_src, int numbTagsToReplace, int
 }
 
 int replace(const char *src, const char *new_src, const char *tag, const char *tag_replacement){
-	if(src == null || new_src == null || tag == null || tag_replacement == null){
+	if(src == NULL || new_src == NULL || tag == NULL || tag_replacement == NULL){
 		return INVALID_NULL_PTR_DETECTED;
 	}
 
 	new_src = src;
-	// how to fix this //
+	for(int i = 0; i < sizeof(src); i++){
+
+		if(*(src + i) == tag[0]){
+			if(strncmp((src + i), tag, sizeof(tag)) == 0){
+				new_src = (src + i) + tag_replacement;
+			}
+		}
+
+	}
 
 
 
