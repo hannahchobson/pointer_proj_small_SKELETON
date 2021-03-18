@@ -48,11 +48,11 @@ int main(int argc, char *argv[]) {
 
 	int string2 = amountOfMemoryToAllocateForNewString(sizeof(string1), num_to_replace, sizeof(tag), sizeof(replacement));
 
-	//allocate char array onto the heap
+	char string3[] = new char[string2];
 
-	string2 = replace(string1, string2, tag, replacement);
+	string2 = replace(string1, const_cast<char *>(string2), tag, replacement);
 
-	writeFile();
+	writeFile(outputfile, const_cast<char *>(string2));
 
 
 
